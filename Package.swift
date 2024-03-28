@@ -10,13 +10,7 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftUISnappingScrollView",
-    platforms: [
-        .iOS(.v13)
-//        .macCatalyst(.v14),
-//        .macOS(.v11),
-//        .tvOS(.v14),
-//        .watchOS(.v7)
-    ],
+    platforms: [.iOS(.v15)],
     products: [
         .library(
             name: "SwiftUISnappingScrollView",
