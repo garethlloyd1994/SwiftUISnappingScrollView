@@ -27,10 +27,10 @@ internal class SnappingScrollViewDelegate: NSObject, ObservableObject, UIScrollV
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView,
                                    withVelocity velocity: CGPoint,
-                                   targetContentOffset: UnsafeMutablePointer<CGPoint>)
-    {
+                                   targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         //Prevent large navigation title from interfering with target offset
-        if (targetContentOffset.pointee.y <= -naturalInset!.top && scrollView.alwaysBounceVertical) {
+        guard let naturalInset = naturalInset else { return }
+        if (targetContentOffset.pointee.y <= -naturalInset.top && scrollView.alwaysBounceVertical) {
             return
         }
         
